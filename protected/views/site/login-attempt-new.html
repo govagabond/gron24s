@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>goVagabond</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="css/prettyCheckable.css" rel="stylesheet" media="screen">
+     <link href="css/jquery-ui-1.9.2.custom.css" rel="stylesheet" media="screen">
+     <link href="css/popup.css" rel="stylesheet" media="screen">
+    <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+     <!-- Responsive declarations up to 980px -->
+		<link rel="stylesheet" href="css/style-responsive.css" media="screen" />
+	
+    	<!-- Responsive styles 1200px and up -->
+     <link href="select/select2.css" rel="stylesheet" type="text/css">
+     <link href="css/modal.css" rel="stylesheet" type="text/css">
+     <link href="css/datepicker.css" rel="stylesheet" type="text/css">
+     <style>
+       div#logInPopup {
+              position:relative;
+              top:313px; left:0px;
+       }
+       .pac-container { border:1px solid #rgba(82, 168, 236, 0.8);border-radius:0 0 5px 5px;  z-index: 1000000000 !important;  }
+       .pointcursor { cursor:pointer; }
+	   .pac-item{ padding:2px 0.4em;}
+
+/* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap1 {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px; line-height:38px;
+      }
+     
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      
+
+
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      #wrap1 > .container {
+        padding-top: 70px;
+      }
+      .container .credit {
+        margin: 20px 0 0px 0;
+      }
+.radio, .checkbox{ padding-left:0;}
+.prettycheckbox a, .prettyradio a{ margin-top:0;}
+      code {
+        font-size: 80%;
+      }
+     </style>
+
+</head>
+  <body >
+
+  <!-- Sign up popup -->
+  <div id="signUpPopup" class="modal fade">
+  
+    <form id="coppr_cont" action="/index.php/site/indexnext" method="post" class="signup in">
+     <div class="page-title txt-cntr">
+     Crop Your Picture
+     </div>
+     <div class="coppr_pic">
+      <img src="images/crop.jpg" width="483" height="360" alt="cropper"> </div>
+      <div class=" fltlft">
+     	 <button class="btn btn-inverse" type="submit">CANCEL</button>
+      </div>
+      <div class="fr">
+      	<button class="btn signupbtn" type="submit">Crop Your Picture</button> 
+        </div>
+    </form>
+  </div>
+<!-- Sign up popup -->
+
+    <div id="wrap1">
+
+      <!-- Fixed navbar -->
+      <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container container-full-width">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img width="179" height="39" alt="logo" src="images/logo.gif"></a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">Find an Experience</a></li>
+                <li class="sep"></li>
+                <li><a href="#about">Find a Local Expert </a></li>
+                <li class="sep"></li>
+                <li><a href="#contact">About Govagabond</a></li>
+                <li class="sep"></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Terms & Policies <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Cancellation</a></li>
+                   <li><a href="#">FAQs</a></li>
+                  </ul>
+                </li>
+                
+              </ul>
+            </div><!--/.nav-collapse -->
+            <div class="fltrt"> 
+          <ul>
+           <li class="llogin"><a data-toggle="modal" href="#signUpPopup">Sign Up</a></li> 
+           <li class="tlogin"><a id="logIn" data-backdrop="false" data-toggle="modal" href="#logInPopup">Login</a></li>
+         </ul>
+         </div>
+          </div>
+        </div>
+      </div>
+	  
+      <!-- Begin page content -->
+    
+      <div class="container">
+        
+        <div class="tab-content" id="login">	
+    			<div class="tab-pane">
+    				<form class="bs-docs-example">
+            			<fieldset>
+              				<legend>Please enter your username and password</legend>
+              					<!--<div class="alert alert-block alert-error fade in">
+            
+            <h4 class="alert-heading">Incorrect Email/Password Combination</h4>
+            <p>Please enter the username and password to login</p>
+            <p>
+              <a href="#" class="btn btn-danger">Take this action</a> 
+            </p>
+          </div>-->
+                                 <div class="form-group2">
+              						<label>Username</label>
+                                    <input placeholder="Username" name="" type="text"  class="inp-textarea">
+             				    </div>
+                                
+                                <div class="form-group2">
+                                <label>Password</label>
+              						<input placeholder="Password" name="" type="text"  class="inp-textarea">
+             				    </div>
+        					<div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" class="checkbox_banr"> Remember me
+            </label>
+          </div>
+        </div>
+      </div>
+                                
+             <div class="fltlft"><a href="#">Forgot Password</a></div> <div class="fr"><button class="btn loginbtn" type="submit">Login</button></div>
+              
+            </fieldset>
+          </form>	
+                </div>
+			</div>
+       
+      </div>
+
+      <div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <div class="ft-left">
+        <a href="#">Media</a> 
+        <span>|</span>
+        <a href="#">Affiliates & Partnerships</a>
+         <span>|</span>
+         <a href="#">Hiring</a> 
+         <span>|</span>
+         <a href="#">Get in Touch</a>
+       </div>
+      	<div class="news">
+        <p>Sign Up Newsletter</p>
+        <input type="text" class="newsltr" id="exampleInputEmail" placeholder="Enter email">
+        <button type="button" class="btn subscribe " >SUBSCRIBE</button>
+        </div>
+        <div class="ft-right">
+        <a href="#"><img  alt="facebook" src="images/facebook.png"></a>&nbsp;&nbsp; 
+        <a href="#"><img  alt="twitter" src="images/twitter.png"></a>&nbsp;&nbsp;
+        <a href="#"><img alt="you-tube" src="images/tube.png"></a> &nbsp; 
+        <a href="#"><img alt="google+" src="images/google+.png"></a></div>
+      </div>
+    </div>
+    <!-- JavaScript plugins (requires jQuery) -->
+   <script src="scripts/jquery.js"></script>
+   <!-- <script src="scripts/popup.js"></script> -->
+   <script src="scripts/rohan.js"></script>
+  
+   <script src="select/select2.js"></script>
+   <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/jquery.autosize.js"></script>
+   <script src="scripts/datepicker.js"></script>
+      <script src="scripts/jquery-ui-1.9.2.custom.js"></script>
+  <!--  // <script src="scripts/bootstrap-dropdown.js"></script> -->
+   <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+   
+<script type="text/javascript" src="scripts/features.js"></script>
+<script type="text/javascript" src="scripts/script.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=true"></script>
+<script>
+  function initialize() {
+
+  var input = document.getElementById('LocationCompete');
+  var options = {
+    types: ['(cities)'],
+    //componentRestrictions: {country: 'fr'}
+  };
+
+  autocomplete = new google.maps.places.Autocomplete(input, options);
+  
+  var input1 = document.getElementById('locationComplete1'); autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+
+  // google.maps.event.addListener(autocomplete, 'place_changed', function() {
+  // //console.log(autocomplete.getPlace().formatted_address); 
+  // //document.getElementById('LocationCompete').value = autocomplete.getPlace().formatted_address; 
+  // //alert(document.getElementById('LocationCompete').value);
+  // });
+
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+   <script type="text/javascript">
+jQuery(function(){
+
+$(".selectComp").select2();
+
+jQuery('.fadein img:gt(0)').hide();
+setInterval(function(){jQuery('.fadein :first-child').fadeOut().next('img').fadeIn().end().appendTo('.fadein');}, 5000);
+}); 
+</script>
+
+<script src="scripts/unslider.min.js"></script>
+<script>
+   $(function() {
+
+    var unslider = $('.banner').unslider();
+    
+    $('.unslider-arrow').click(function() {
+        var fn = this.className.split(' ')[1];
+        
+        //  Either do unslider.data('unslider').next() or .prev() depending on the className
+        unslider.data('unslider')[fn]();
+    });
+
+});
+</script>
+
+
+<script type="text/javascript">
+// $(function(){
+// $('select.styled').customSelect();
+// });
+</script>
+<script type="text/javascript">
+	window.onload = function(){
+		new JsDatePick({
+			useMode:2,
+			target:"inputField",
+			dateFormat:"%d-%M-%Y"
+	});
+	};
+</script>
+ <script>
+  $(function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+  $().ready(function(){
+
+  $('input.checkbox_banr').prettyCheckable();
+
+});
+
+$().ready(function(){
+
+  $('input.checkbox_banr').prettyCheckable({
+    color: 'red'
+  });
+
+});
+  </script>
+  
+  <script src="scripts/prettyCheckable.js"></script>
+<script>
+jQuery('ul.nav li.dropdown').hover(function() {
+  jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn();
+}, function() {
+  jQuery(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
+});</script>
+<!-- And the JavaScript -->
+
+  </body>
+</html>
